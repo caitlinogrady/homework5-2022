@@ -1,0 +1,160 @@
+/* creating the animation */
+@keyframes mylogo{
+    from {width:25px; opacity: 0; }
+    to {width:475px; opacity: 1; }
+}
+/* applying the animation to my logo*/
+#logo {
+    animation-duration: 5s;
+    animation-name: mylogo;
+
+}
+/* setting font and background images / color */
+body{
+    font-family:"Poppins",serif;
+    background-image: url("../images/concrete_seamless.png");
+    background: #f1f1f1;
+    
+}
+/* aligning header content to match image */
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+/* aligning nav links to match image */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+}
+/* keeping links same color after being visited */
+a:visited{
+    color:#0000FF
+}
+/* styling card headers */
+.card > header{
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px 20px 0px;
+
+    
+}
+/* rounded corners */
+.card{
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px 0px;
+    overflow: hidden;
+}
+/* styling pricing class */
+.pricing{
+    display: flex; 
+    flex: content;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content: center;
+}
+/* styling gallery images to have a border / margin and certain width*/
+.gallery img{
+    width: 300px;
+    border: 10px solid #50C7C7;
+    margin: 10px;
+}
+/* styling gallery as a whole to match style specifications from image */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* styling specifications to apply when screen size larger than 900*/
+@media (min-width:900px){
+    /* different styling for header*/
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    /*different styling for nav links*/
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+    /* changing pricing class style */
+    .pricing{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        
+    }
+    /* changing the card styling*/
+    .card{
+        flex-basis: 275px;
+    }
+    /* fixed header when scrolling*/
+    a+ header{
+        position: fixed;
+        width: 100%;
+        top:0;
+    }
+    /* making sure top of page isn't hidden behind fixed header at the top of the page */
+    .about{
+        margin: 100px 0px 0px 0px;
+    }
+}
+/* reduced motion specifications (no animation of logo*/
+    @media screen and (prefers-reduced-motion: reduce){
+        #logo{
+            animation-duration: 0s;
+        }
+    }
+/* print view style */
+    @media print and (orientation:portrait){
+        /* changing font */
+        body{
+            font-family: Arial,Helvetica;
+            background: #f1f1f1;
+        }
+        /* dif styling of header*/
+        header{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        /* need this so that the nav links can space correctly */
+        nav{
+            width: 100%;
+        }
+        /* styling nav links */
+        .nav_links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+        }
+       /* different styling of pricing class*/
+        .pricing{
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: nowrap;
+        }
+        /* different styling of the cards */
+        .card{
+            border: 2px solid #45ADDD ;
+            flex-basis: 325px;
+        }
+        /* hiding the gallery */
+        #gallery ,.gallery{
+            display: none;
+        }
+        /* adding the thumbs up emoji */
+        .card li:nth-child(2)::after{
+            content: "👍";
+        }
+    }
+    
+    
+
+
