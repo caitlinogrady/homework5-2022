@@ -109,7 +109,7 @@ a:visited{
         }
     }
 /* print view style */
-    @media print and (orientation:portrait){
+    @media print {
         /* changing font */
         body{
             font-family: Arial,Helvetica;
